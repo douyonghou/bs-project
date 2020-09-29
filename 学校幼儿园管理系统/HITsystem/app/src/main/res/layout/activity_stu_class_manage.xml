@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".stuClassManage"
+    android:orientation="vertical"
+    android:layout_margin="20dp">
+
+
+
+        <Button
+            android:id="@+id/queryee"
+            android:text="成绩查询"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="query"/>
+    <Button
+        android:id="@+id/queryee_kc"
+        android:text="课程安排"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="query_kc"/>
+
+
+
+</LinearLayout>
