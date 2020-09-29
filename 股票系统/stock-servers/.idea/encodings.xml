@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="GBK">
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/stock/bean/StockInfoBean.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/stock/bean/TradeRecordBean.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/stock/bean/UserInfoBean.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/stock/model/StockModifyModel.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/stock/model/StockQueryModel.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/stock/model/StockTradeModel.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/stock/model/UserAccountModel.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/stock/model/UserInfoModel.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/stock/servlet/AddStockServlet.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/stock/servlet/BuyStockServlet.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/stock/servlet/DeleteStockServlet.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/stock/servlet/PricePageQueryServlet.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/stock/servlet/RegisterServlet.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/stock/servlet/SaleStockServlet.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/stock/servlet/code_list" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/stock/servlet/code_list_1" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/stock/util/DBUtil.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/addStock.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/buyStock.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/chargeAccount.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/image.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/login.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/main.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/manageStock.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/priceQuery.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/register.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/saleStock.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/searchQuery.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/tradeRecord.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/../stockmvc-master/testSpring/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../stockmvc-master/testSpring/src/main/resources" charset="UTF-8" />
+    <file url="PROJECT" charset="GBK" />
+  </component>
+</project>
