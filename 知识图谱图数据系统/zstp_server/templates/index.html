@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>控制台</title>
+
+    <link rel="stylesheet" type="text/css" href='{% static "css/font.css" %}'/>
+
+    <link rel="stylesheet" type="text/css" href='{% static "css/xadmin.css" %}'/>
+    <link rel="apple-touch-startup-image" href='{% static "images/code.png" %}'/>
+    <script src='{% static "js/common/commonHead.js" %}'></script>
+
+
+</head>
+
+<body>
+    <!-- 顶部开始 -->
+    <div class="container">
+        <div class="logo"><a href=" {% url 'index' %}">知识图谱系统</a></div>
+        <div class="left_open">
+            <i title="展开左侧栏" class="iconfont">&#xe699;</i>
+        </div>
+        <ul class="layui-nav right" lay-filter="">
+            <li class="layui-nav-item">
+                <a id="userAdmin">版权个人所有</a>
+            </li>
+            <li class="layui-nav-item to-index"><a id="indexAdmin">前台首页</a></li>
+        </ul>
+
+    </div>
+    <!-- 顶部结束 -->
+    <!-- 中部开始 -->
+    <!-- 左侧菜单开始 -->
+    <div class="left-nav">
+        <div id="side-nav">
+            <ul id="nav">
+                <li>
+                    <a href="javascript:;">
+                        <i class="iconfont">&#xe699;</i>
+                        <cite>知识图谱管理</cite>
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a _href="{% url 'insert' %}">
+                                <i class="iconfont">&#xe6a7;</i>
+                                <cite>三元组插入</cite>
+                            </a>
+                        </li>
+                         <li>
+                            <a _href="{% url 'insert' %}">
+                                <i class="iconfont">&#xe6a7;</i>
+                                <cite>三元组更新</cite>
+                            </a>
+                        </li>
+                       
+                        <li>
+                            <a _href="{% url 'delete' %}">
+                                <i class="iconfont">&#xe6a7;</i>
+                                <cite>节点删除</cite>
+                            </a>
+                        </li>
+                   
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <i class="iconfont">&#xe723;</i>
+                        <cite>知识图谱补全</cite>
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a _href="{% url 'buquan_node' %}">
+                                <i class="iconfont">&#xe6a7;</i>
+                                <cite>补全节点关系</cite>
+                            </a>
+                        </li>
+                        <li>
+{#                            <a _href="{% url 'buquan_tupu' %}">#}
+                            <a _href="http://127.0.0.1:5555/svg">
+                                <i class="iconfont">&#xe6a7;</i>
+                                <cite>补全图谱</cite>
+                            </a>
+                        </li>
+                      
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <i class="iconfont">&#xe726;</i>
+                        <cite>知识查询</cite>
+                        <i class="iconfont nav_right">&#xe697;</i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a _href="{% url 'shiti_search' %}">
+                                <i class="iconfont">&#xe6a7;</i>
+                                <cite>实体查询</cite>
+                            </a>
+                        </li>
+                        <li>
+                            <a _href="{% url 'sanyuanzhu_search' %}">
+                                <i class="iconfont">&#xe6a7;</i>
+                                <cite>三元组查询</cite>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- <div class="x-slide_left"></div> -->
+    <!-- 左侧菜单结束 -->
+    <!-- 右侧主体开始 -->
+    <div class="page-content">
+        <div class="layui-tab tab" lay-filter="xbs_tab" lay-allowclose="false">
+            <ul class="layui-tab-title">
+                <li class="home"><i class="layui-icon">&#xe68e;</i>我的桌面</li>
+            </ul>
+            <div class="layui-tab-content">
+                <div class="layui-tab-item layui-show">
+                    <iframe src="{% url 'welcome' %}" frameborder="0" scrolling="yes" class="x-iframe"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-content-bg"></div>
+    <!-- 右侧主体结束 -->
+    <!-- 中部结束 -->
+    <!-- 底部开始 -->
+    <div class="footer">
+        <div class="copyright">用于个人开发-知识图谱系统</div>
+    </div>
+	 <!-- 统一引用js -->
+
+
+    <script src='{% static "js/common/commonJS.js" %}'></script>
+    <script src='{% static "lib/layui/layui.js" %}'></script>
+    <script src='{% static "js/jquery/jquery-3.2.1.min.js" %}'></script>
+    <script src='{% static "js/xadmin.js" %}'></script>
+    <script src='{% static "js/echarts/westeros.js" %}'></script>
+    <script src='{% static "js/echarts/westeros.js" %}'></script>
+
+</body>

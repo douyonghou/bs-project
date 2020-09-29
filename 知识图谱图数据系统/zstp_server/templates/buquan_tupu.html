@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+     <link rel="stylesheet" type="text/css" href='{% static "css/font.css" %}'/>
+
+    <link rel="stylesheet" type="text/css" href='{% static "css/xadmin.css" %}'/>
+    <link rel="apple-touch-startup-image" href='{% static "images/code.png" %}'/>
+    <script src='{% static "js/common/commonHead.js" %}'></script>
+
+    <title>知识图谱系统</title>
+</head>
+
+<body>
+    <div class="x-nav">
+        <span class="layui-breadcrumb">
+        <a href="">知识图谱系统-补全</a>
+
+      </span>
+        <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);" title="刷新">
+            <i class="layui-icon" style="line-height:30px">ဂ</i></a>
+    </div>
+    <div class="x-body layui-anim layui-anim-up">
+        <script src="./js/common/commonJS.js"></script>
+        <fieldset class="layui-elem-field">
+            <legend>图谱补全</legend>
+            <div class="layui-field-box">
+                <div class="layui-col-md12">
+
+                </div>
+            </div>
+        </fieldset>
+        <div style="padding: 20px; background-color: #F2F2F2; width: 100%;">
+            <div class="layui-row layui-col-space15">
+                <div class="layui-col-md6" style="width: 100%;">
+                    <div class="layui-card">
+                        <div class="layui-card-header">
+                            <h3>补全关系</h3>
+                        </div>
+                        <div class="layui-card-body">
+                            <div id="HeroPercentage" style="width: 100%; height:400px;">
+
+	                         <div class="layui-card-body">
+                            <div class="layui-row" style="margin-bottom : 20px;">
+                                <form class="layui-form">
+
+                                    <button class="layui-btn" type="button" id="heroSearchBtn">
+                                <i class="layui-icon" style="font-size: 20px; "></i> 执行
+                            </button>
+                                </form>
+                            </div>
+							<table class="layui-table">
+                                <thead>
+                                    <tr>
+                                        <th>节点1</th>
+                                        <th>实体2</th>
+                                        <th>补全关系</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><input id="name"></input></td>
+                                        <td><input id="useNum"></input></td>
+                                        <td><input id="useRate"></input></td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+							</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+      <script src='{% static "js/common/commonJS.js" %}'></script>
+    <script src='{% static "lib/layui/layui.js" %}'></script>
+    <script src='{% static "js/jquery/jquery-3.2.1.min.js" %}'></script>
+    <script src='{% static "js/xadmin.js" %}'></script>
+    <script src='{% static "js/echarts/westeros.js" %}'></script>
+    <script src='{% static "js/echarts/westeros.js" %}'></script>
+
+
+
+    <script type="text/javascript" src='{% static "js/d3.min.js" %}'></script>
+    <script type="text/javascript" src='{% static "js/strucMap.min.js" %}' ></script>
+    <link rel="stylesheet" href='{% static "css/strucMap.min.csss" %}' />
+
+
+
+
+
+
+
+
+<div id="title"  >知识图谱</div>
+		<div id="topomap" style="margin: 0 auto;" ></div>
+
+
+
+    <script type="text/javascript">
+
+			var nodePX = 0;
+			var nodePY = 0;
+
+	        var options = {
+	        	selector:"#topomap",
+	            width: 1440,//实际展开图宽度
+	            height: 1440,//实际展开图高度
+	            lineLength:100,
+//	            textColor:"#000",
+//	            textFontFamily:'',
+	            nodesClick: function(t) {
+					//if(t.index==0) t.fixed=1;//判断如果是第一级，移动后就将它固定
+					t.fixed = 1;
+					console.log(t);
+					var nodeX = JSON.parse(JSON.stringify(t.x));
+					var nodeY = JSON.parse(JSON.stringify(t.y));
+					//xy都没有变，说明没有拖动
+					if((nodeX == nodePX)&&(nodeY == nodePY)){
+						console.info("跳页面啦~~~~~~");
+					}
+				},
+				nodesDragstart:function(t) {
+					nodePX = JSON.parse(JSON.stringify(t.x));
+					nodePY = JSON.parse(JSON.stringify(t.y));
+					//console.log("移动开始",JSON.parse(JSON.stringify(t.x)),JSON.parse(JSON.stringify(t.y)));
+				}
+				};
+
+	            var nodesJson = [{"fixed":true,"id":0,"index":0,"prop":{"name":"后端架构师技术图谱","size":32},"x":724,"y":616},
+
+
+												 {"id":37,"index":2,"prop":{"name":"Java 并发","size":15}},
+												 {"id":38,"index":2,"prop":{"name":"多线程","size":15}},
+												 {"id":39,"index":2,"prop":{"name":"线程安全","size":15}},
+												 {"id":40,"index":2,"prop":{"name":"一致性、事务","size":15}},
+												 {"id":41,"index":2,"prop":{"name":"锁","size":15}}
+								];
+				//source和target都是按照数组的顺序来的，下标
+	           	var linksJson = [
+								{"source":0,"target":1,},
+								{"source":0,"target":2,},
+								{"source":0,"target":3,},
+								{"source":0,"target":4,},
+								{"source":0,"target":5,},
+								{"source":0,"target":6,},
+								{"source":0,"target":7,}
+								];
+
+				console.log("初始化打印",linksJson);
+	            loadMap(options, nodesJson, linksJson);
+		</script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

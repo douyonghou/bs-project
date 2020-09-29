@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src='{% static "js/common/commonJS.js" %}'></script>
+    <script src='{% static "lib/layui/layui.js" %}'></script>
+    <script src='{% static "js/jquery/jquery-3.2.1.min.js" %}'></script>
+    <script src='{% static "js/xadmin.js" %}'></script>
+    <script src='{% static "js/echarts/westeros.js" %}'></script>
+    <link rel="stylesheet" type="text/css" href='{% static "css/font.css" %}'/>
+    <link rel="stylesheet" type="text/css" href='{% static "css/xadmin.css" %}'/>
+    <link rel="apple-touch-startup-image" href='{% static "images/code.png" %}'/>
+    <script src='{% static "js/common/commonHead.js" %}'></script>
+    <title>hero查询</title>
+</head>
+
+<body>
+    <div class="x-nav">
+        <span class="layui-breadcrumb">
+
+        <a><cite>实体删除</cite></a>
+      </span>
+        <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);" title="刷新">
+            <i class="layui-icon" style="line-height:30px">ဂ</i></a>
+    </div>
+    <div class="x-body layui-anim layui-anim-up">
+        <blockquote class="layui-elem-quote">
+            <p>&nbsp;&nbsp;&nbsp;在这里，你可以通过检索实体名称，删除对应的实体。</p>
+        </blockquote>
+        <div style="padding: 20px; background-color: #F2F2F2;">
+            <div class="layui-row layui-col-space15">
+                <div class="layui-col-md12">
+                    <div class="layui-card">
+                        <div class="layui-card-body">
+                            <div class="layui-row" style="margin-bottom : 20px;">
+
+
+                                <form class="layui-form"  action="/delete_post/" method="post">
+                                    {% csrf_token %}
+                                    <div class="layui-input-inline">
+                                        <input type="tel" name='delete_1' id="heroName" autocomplete="off" placeholder="输入节点标签" class="layui-input">
+                                        <input type="tel" name='delete_2' id="heroName" autocomplete="off" placeholder="输入节点名称" class="layui-input">
+                                        <input type="tel" name='delete_3' id="heroName" autocomplete="off" placeholder="输入属性值" class="layui-input">
+                                    </div>
+                                    <br>
+                                    <button class="layui-btn" type="submit" id="heroSearchBtn1111">
+                                    <i class="layui-icon" style="font-size: 20px; "></i> 节点删除
+                                    </button>
+                                </form>
+                            </div>
+                            <table class="layui-table">
+                                <thead>
+                                    <tr>
+                                        <th>标签名称</th>
+                                        <th>节点名称</th>
+                                        <th>属性列表</th>
+
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><span id="lable_name"> <p>{{ lable_name }}</p></span></td>
+                                        <td><span id="node_name"> <p>{{ node_name }}</p></span></td>
+                                        <td><span id="properties"> <p>{{ properties }}</p></span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p>{{ res_info }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>

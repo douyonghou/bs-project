@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+    <title>欢迎页面-X-admin2.0</title>
+    <link rel="stylesheet" type="text/css" href='{% static "css/font.css" %}'/>
+
+    <link rel="stylesheet" type="text/css" href='{% static "css/xadmin.css" %}'/>
+    <link rel="apple-touch-startup-image" href='{% static "images/code.png" %}'/>
+    <script src='{% static "js/common/commonHead.js" %}'></script>
+</head>
+
+<body>
+    <div class="x-body layui-anim layui-anim-up">
+        <blockquote class="layui-elem-quote">欢迎登陆知识图谱系统:
+            <span id="now_time">2020-06-25 20:50:53</span></blockquote>
+        <fieldset class="layui-elem-field">
+            <legend>豆瓣图书-推荐图谱</legend>
+            <div class="layui-field-box">
+                <div class="layui-col-md12">
+                    <div class="layui-card">
+                        <div class="layui-card-body">
+                            <div class="layui-carousel x-admin-carousel x-admin-backlog" lay-anim="" lay-indicator="inside" lay-arrow="none" style="width: 100%; height: 90px;">
+                                <div carousel-item="">
+                                    <ul class="layui-row layui-col-space10 layui-this">
+                                        <li class="layui-col-xs2">
+                                            <a href="javascript:;" class="x-admin-backlog-body">
+                                                <h3>数据量</h3>
+                                                <p>
+                                                    <cite>100w</cite></p>
+                                            </a>
+                                        </li>
+                                        <li class="layui-col-xs2">
+                                            <a href="javascript:;" class="x-admin-backlog-body">
+                                                <h3>node数</h3>
+                                                <p>
+                                                    <cite>5</cite></p>
+                                            </a>
+                                        </li>
+                                        <li class="layui-col-xs2">
+                                            <a href="javascript:;" class="x-admin-backlog-body">
+                                                <h3>属性值</h3>
+                                                <p>
+                                                    <cite>32323232</cite></p>
+                                            </a>
+                                        </li>
+                                        <li class="layui-col-xs2">
+                                            <a href="javascript:;" class="x-admin-backlog-body">
+                                                <h3>图表数</h3>
+                                                <p>
+                                                    <cite>4</cite></p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset class="layui-elem-field">
+            <legend>开发团队</legend>
+            <div class="layui-field-box">
+                <table class="layui-table">
+                    <tbody>
+                        <tr>
+                            <th>版权个人所有</th>
+                            <td>
+                                <a href="" class='x-a' target="_blank">访问首页</a></td>
+                        </tr>
+                        <tr>
+                            <th>开发团队</th>
+                            <td>个人开发</td>
+                        </tr>
+                        <tr>
+                            <th>团队成员</th>
+                            <td>个人<br> 	
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </fieldset>
+        <fieldset class="layui-elem-field">
+            <legend>使用技术</legend>
+            <div class="layui-field-box">
+                <table class="layui-table">
+                    <tbody>
+                        <tr>
+                            <th>前端</th>
+                            <td>html;css;javascript</td>
+                        </tr>
+                        <tr>
+                            <th>UI 框架</th>
+                            <td>Bootstrap;Layui</td>
+                        </tr>
+                        <tr>
+                            <td>JS 框架</td>
+                            <td>jQuery;eCharts</td>
+                        </tr>
+                        <tr>
+                            <td>后端</td>
+                            <td>python</td>
+                        </tr>
+                        <tr>
+                            <td>后端框架</td>
+                            <td>djongo</td>
+                        </tr>
+                        <tr>
+                            <td>技术架构</td>
+                            <td>neo4j+python</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </fieldset>
+        
+     
+    </div>
+    <!-- 统一引用js -->
+    <script src="./js/common/commonJS.js"></script>
+    <script>
+        update_current_time()
+        setInterval(update_current_time, 500)
+
+        function update_current_time() {
+            var current_date = new Date()
+            var time_content = ''
+            var year = current_date.getFullYear()
+            var month = current_date.getMonth() + 1
+            var day = current_date.getDate()
+            var hour = current_date.getHours() + ':'
+            if (hour.length < 3) hour = '0' + hour
+            var minute = current_date.getMinutes() + ':'
+            if (minute.length < 3) minute = '0' + minute
+            var second = current_date.getSeconds()
+            time_content += year + '-' + month + '-' + day + ' ' + hour + minute + (second < 10 ? '0' + second : second)
+            $('#now_time').html(time_content)
+        }
+    </script>
+
+<!-- 统一引用js -->
+
+
+    <script src='{% static "js/common/commonJS.js" %}'></script>
+    <script src='{% static "lib/layui/layui.js" %}'></script>
+    <script src='{% static "js/jquery/jquery-3.2.1.min.js" %}'></script>
+    <script src='{% static "js/xadmin.js" %}'></script>
+    <script src='{% static "js/echarts/westeros.js" %}'></script>
+    <script src='{% static "js/echarts/westeros.js" %}'></script>
+</body>
+
+</html>

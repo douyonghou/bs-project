@@ -1,0 +1,53 @@
+# coding:utf-8
+
+import json
+
+from flask import Flask, render_template
+
+from util import clean_data
+
+app = Flask(__name__)
+
+NODES_DATA = [{"id": "小王", "data": {"labels": ["man"], "property": { "name": "小王"}}},{"id": "小赵", "data": {"labels": ["children", "person"], "property": {"name": "小赵"}}}]
+NODES_LINK = [{"source": "小王", "target": "小赵", "labels": "基友"},]
+book_all_list = clean_data.book_all_list()
+type_all_list = clean_data.type_all_list()
+data_all = book_all_list.append(type_all_list)
+a=[
+{'id': '弗罗伦斯·南丁格尔', 'data': {'labels': ['传记'], 'property': {'name': '弗罗伦斯·南丁格尔', 'type': '0.0'}}},
+{'id': '传记', 'data': {'labels': ['type'], 'property': {'name': '传记'}}}
+]
+b=[
+{'source': '弗罗伦斯·南丁格尔', 'target': '传记', 'labels': '0.0'}
+]
+print(type_all_list)
+print(type_all_list)
+
+rel_book_type=[]
+for book in book_all_list[1:]:
+    print(book)
+    if len(book) != 4:
+        continue
+    print(book['data']['labels'][0])
+    dict_book = {"source": book['id'], "target": book['data']['labels'][0], "labels": book['data']['property']['type']}
+    # print(book)
+    rel_book_type.append(dict_book)
+    # print(dict_book)
+    # print(book['data']['labels'][0])
+    # print(book['data']['property']['type'])
+
+
+
+
+link_json=json.dumps(rel_book_type, ensure_ascii=False)
+data_json=json.dumps(data_all,ensure_ascii=False)
+print(data_json)
+
+
+@app.route("/svg", methods=("GET", "POST"))
+def svg():
+    return render_template("neostudy2.html", NODES_DATA = data_json,NODES_LINK=  link_json )
+
+if __name__ == '__main__':
+    print('')
+    app.run(debug=True, host='127.0.0.1', port=5555)
